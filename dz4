@@ -1,0 +1,7 @@
+print("Enter the sides of the rectangle separated by spaces.")
+a, b, c, d = map(float, input().split())
+print("Rectangle perimeter:", a + b + c + d)
+print("Rectangle area:", a * b * c * d)
+
+a = 89646
+print(float(4 ** 6 * 6 / (8 - 9)))
