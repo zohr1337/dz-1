@@ -1,0 +1,19 @@
+s1 = input()
+s2 = s1[::-1]
+if s1 == s2:
+    print("Yes");
+else:
+    print("No");
+print(s2)
+
+
+
+s1 = str(input())
+s1_result = ""
+s2= len(s1)
+print(s2)
+for i in range (s2 - 1):
+    if (not ord(s1[i]) == 32) or (not ord(s1[i+1]) == 32):
+        s1_result += s1[i];
+       
+print(s1_result)
