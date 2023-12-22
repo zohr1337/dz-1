@@ -17,3 +17,19 @@ for i in range (s2 - 1):
         s1_result += s1[i];
        
 print(s1_result)
+
+
+or 
+
+
+
+s1 = str(input())
+s1_result = ""
+s2= len(s1)
+print(s2)
+for i in range (s2 - 1):
+    if ord(s1[i]) != 32 or ord(s1[i+1]) != 32:
+        s1_result += s1[i]
+        i += 1;
+       
+print(s1_result)
