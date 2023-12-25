@@ -1,0 +1,41 @@
+a = int(input())
+res = []
+for i in range (a):
+    tmp = input()
+    res.append(tmp);
+res.reverse()
+print(res)
+
+
+
+a = int(input())
+res = []
+for i in range(a):
+    tmp = input()
+    if i != a - 1:
+        res.append(tmp);
+    else: 
+        res.insert(0, tmp)  ;
+print(res)
+   
+ 
+
+mass = int(input())
+number = int(input())
+arr = []
+res = []
+for i in range(number):
+    arr.append(int(input()))
+ 
+for x in range(len(arr)):
+    if arr[x] + min(arr) <= mass:
+        res += [[arr[x], min(arr)]]
+        arr[x] += mass
+        arr[arr.index(min(arr))] += mass
+    else:
+        if arr[x] > mass:
+            continue
+        else:
+            res += [arr[x]]
+print(arr, res)
+print(len(res))
