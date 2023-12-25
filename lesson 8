@@ -1,8 +1,16 @@
+
 a = int(input())
+b = 0
 res = []
-for i in range (a):
-    tmp = input()
-    res.append(tmp);
+if a < 0 or a > 10000:
+    print("Ввели число не входящее в диапозон");
+else: 
+    for i in range (a):
+        tmp = int(input())
+        if tmp <= 10 ** 5:
+            res.append(tmp);
+        else: 
+            print("Число выше 100 000");
 res.reverse()
 print(res)
 
@@ -10,32 +18,41 @@ print(res)
 
 a = int(input())
 res = []
-for i in range(a):
-    tmp = input()
-    if i != a - 1:
-        res.append(tmp);
-    else: 
-        res.insert(0, tmp)  ;
+if a >= 1 and a <= 100000:
+    for i in range(a):
+        tmp = int(input())
+        if tmp >= 1 and tmp <= 10 ** 9:
+            if i != a - 1:
+                res.append(tmp);
+            else: 
+                res.insert(0, tmp);
+        else: 
+            print("Число не входит в диапозон от 1 до 1 000 000 000.")
 print(res)
-   
+
  
 
 mass = int(input())
-number = int(input())
-arr = []
-res = []
-for i in range(number):
-    arr.append(int(input()))
+if mass >= 1 and mass <= 10**6:
+    number = int(input())
+    arr = []
+    res = []
+    if number >= 1 and number <= 100:
+        for i in range(number):
+            arr.append(int(input()))
  
-for x in range(len(arr)):
-    if arr[x] + min(arr) <= mass:
-        res += [[arr[x], min(arr)]]
-        arr[x] += mass
-        arr[arr.index(min(arr))] += mass
-    else:
-        if arr[x] > mass:
-            continue
-        else:
-            res += [arr[x]]
-print(arr, res)
+        for x in range(len(arr)):
+            if arr[x] + min(arr) <= mass:
+                res += [[arr[x], min(arr)]]
+                arr[x] += mass
+                arr[arr.index(min(arr))] += mass
+            else:
+                if arr[x] > mass:
+                    continue
+                else:
+                    res += [arr[x]];
+    else: 
+        print("Число рыбаков не входит в диапозон.")
+else: 
+    print("Масса превышена.")            
 print(len(res))
