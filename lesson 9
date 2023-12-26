@@ -1,0 +1,36 @@
+
+a = int(input())
+res = set()
+if a >= 1 and a <= 100000:
+    arr = list(map(int, input().split()))
+    for i in range (a):
+        if abs(arr[i]) <= 2 * (10 ** 9):
+            res.add(arr[i]);
+print(len(res))
+
+
+arr = []
+tmp = []
+print ("Введите сколько чисел нужно в 1ом списке.")
+a = int(input())
+print ("Введите числа. Каждое число на отдельной строке.")
+if a <= 100000:
+    for i in range (a):
+        arr.append(int(input()));
+print ("Введите сколько чисел нужно в 2ом списке.")
+b = int(input())
+print ("Введите числа. Каждое число на отдельной строке.")
+if b <= 100000:
+    for i in range (b):
+        tmp.append(int(input()));
+print("Всего чисел:", len(arr) + len(tmp))
+
+
+arr = input().split()
+res = set()
+for i in arr:
+    if i in res:
+        print( "YES");
+    else:
+        print( "NO")
+        res.add(i);
