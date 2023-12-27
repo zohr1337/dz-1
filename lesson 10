@@ -1,0 +1,26 @@
+animals = dict()
+print("Как зовут вашего питомца?")
+name = input()
+animals[name] = dict()
+info = animals[name]
+animals[name]['Вид питомца'] = input()
+a = int(input())
+if a % 10 == 1 and a != 11:
+    b = str(a) + " год";
+elif a % 10 >= 2 and a % 10 <=5  and a != range(12,16):
+    b = str(a) + " года"
+else:
+    b = str(a) + " лет"
+animals[name]['Возраст питомца'] = b
+animals[name]['Имя владельца'] = input()
+info = animals[name]
+print("Это " + info['Вид питомца'] + " по кличке " + name + " .Возраст питомца : " +  info['Возраст питомца'] + ". Имя владельца: " + info['Имя владельца'] + ".")
+
+
+
+
+
+arr = dict()
+for i in range(10, -6, -1):
+     arr[i] = i ** i;
+print(arr)
