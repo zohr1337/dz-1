@@ -1,0 +1,88 @@
+"""
+def factorial(n):
+    
+    for i in n:
+        fact = 1
+        if i == 1:
+            arr.append(fact)
+            return
+        while i > 1:
+            fact *= i
+            i -= 1 
+        arr.append(fact)   
+    
+
+a = [6, 5, 4, 3, 2, 1] 
+arr = []
+factorial(a)
+print(arr)
+"""
+
+
+import collections
+
+def create():
+    last = collections.deque(pets, maxlen=1)[0]
+    pets[name] = dict()
+    print("Введите команду для создания:")
+    command = input()
+    while command != 'stop':
+        if command == 'Вид питомца':
+             pets[name]['Вид питомца'] = input()
+        elif command == 'Возраст питомца':
+             a = int(input())
+             pets[name]['Возраст питомца'] = get_suffix(a)
+        elif command == 'Имя владельца':
+            pets[name]['Имя владельца'] = input()
+        else: 
+            print("Неизвестная комманда.")    
+        command = input()
+    print(last)
+        
+        
+            
+        
+
+def read():
+    s
+
+def update():
+    s
+    
+def delete(ID):
+    s
+    
+
+def get_pet(ID):
+    return pets[ID] if ID in pets.keys() else False
+
+
+def get_suffix(a):
+    if a % 10 == 1 and a != 11:
+       b = str(a) + " год";
+    elif a % 10 >= 2 and a % 10 <=5  and a != range(12,16):
+       b = str(a) + " года"
+    else:
+       b = str(a) + " лет"
+    return b
+
+def pets_list(ID):
+    for i in ID:
+        print(pets[ID])
+        
+
+pets = dict()  
+print("Введите комманду.")
+command = input()
+while command != "stop":
+    if command == "Создать питомца":
+        print("Введите имя питомца.")
+        name = input()
+        pets[name] = dict()
+        create()
+    else:
+        print("Неизвестная команда.")
+    print(pets)
+    command = input()
+
+            
