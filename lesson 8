@@ -32,27 +32,34 @@ print(res)
 
  
 
-mass = int(input())
-if mass >= 1 and mass <= 10**6:
-    number = int(input())
-    arr = []
-    res = []
-    if number >= 1 and number <= 100:
-        for i in range(number):
-            arr.append(int(input()))
- 
-        for x in range(len(arr)):
-            if arr[x] + min(arr) <= mass:
-                res += [[arr[x], min(arr)]]
-                arr[x] += mass
-                arr[arr.index(min(arr))] += mass
-            else:
-                if arr[x] > mass:
-                    continue
-                else:
-                    res += [arr[x]];
-    else: 
-        print("Число рыбаков не входит в диапозон.")
-else: 
-    print("Масса превышена.")            
-print(len(res))
+maxmass = int(input("Введите максимальную массу лодки "))
+if maxmass >=  1 and maxmass <= 10 ** 6:
+    human = int(input("Введите количество рыбоков "))
+    if human > 1 and human < 100:
+        weight = []
+        humanres = 0
+        for i in range(human):
+            kg = (int(input(f'Введите вес {i + 1}го рыбака ')))
+            if kg >= 1 and kg <= maxmass:
+                weight.append(kg)
+                humanres += 1 
+            else: 
+                print("Плывет самостоятельно кролем.")
+                
+        weight.sort()
+        boards = 0
+        left = 0
+        right = humanres - 1
+        while left <= right:
+            if weight[left] + weight[right] <= maxmass:
+                left += 1
+                right -= 1 
+                boards += 1 
+            elif weight[left] + weight[right] > maxmass:
+                right -= 1 
+                boards += 1 
+    else:
+        print("Превысели количество рыбаков!")
+else:
+    print("Число не входит в диапозон.")
+print(boards)
