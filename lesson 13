@@ -1,0 +1,57 @@
+import random
+
+def read(arr):
+    for i in arr:
+        print(*i)
+    
+        
+
+arr = [[0 for i in range(10)] for i in range (10)]
+for i in range(len(arr)):
+    for j in range(len(arr[i])):
+        arr[i][j] = random.randrange(-99,99)
+
+tmp = [[0 for i in range(10)] for i in range (10)]
+for i in range(len(tmp)):
+    for j in range(len(tmp[i])):
+        tmp[i][j] = random.randrange(-99,99)
+ 
+res = [[0 for i in range(10)] for i in range (10)]
+for i in range(len(res)):
+    for j in range(len(res[i])):
+        res[i][j] = arr[i][j] + tmp[i][j]
+
+read(res)
+
+
+
+
+
+def read(arr):
+    for i in arr:
+        print(*i)
+
+a = int(input("Введите число столбцов: "))
+b = int(input("Введите число строк: "))
+
+arr = [[0 for i in range(b)] for i in range (a)]
+for i in range(len(arr)):
+    for j in range(len(arr[i])):
+        arr[i][j] = random.randrange(-99,99)
+
+tmp = [[0 for i in range(b)] for i in range (a)]
+for i in range(len(tmp)):
+    for j in range(len(tmp[i])):
+        tmp[i][j] = random.randrange(-99,99)
+ 
+res = [[0 for i in range(b)] for i in range (a)]
+for i in range(len(res)):
+    for j in range(len(res[i])):
+        res[i][j] = arr[i][j] + tmp[i][j]
+ 
+print("Первый двумерный список:")        
+read(arr)
+print("Второй двумерный список:")
+read(tmp)
+print("Сумма двумерных списков:")
+read(res)
