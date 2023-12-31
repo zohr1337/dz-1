@@ -1,13 +1,26 @@
-#a = int(input())
-#if (a < 0): print ("Отрицательное число.")
-#elif (a > 0): print ("Положительное число.")
-#else: print ("Нулевое число.")
+
+a = int(input())
+if (a < 0): 
+    print ("Отрицательное число.")
+    if a % 2 == 0:
+        print("Число четное.")
+    else:
+        print("Число не четное")
+elif (a > 0): 
+    print ("Положительное число.")
+    if a % 2 == 0:
+        print("Число четное.")
+    else:
+        print("Число не четное")
+else: print ("Нулевое число.")
 
 
-#b = input()
-#print(b.count('a'), b.count('e'), b.count('i'), b.count('o'), b.count('u'))
-#if (b.count('a') != 0 or b.count('e') != 0 or  b.count('i') != 0 or b.count('o') != 0 or b.count('u')): 
-#    print("False")
+b = input()
+print("Количество гласных: а - ", b.count('a'), ", е - ", b.count('e'), ", i - ", b.count('i')," o - " , b.count('o'), ", u - " , b.count('u'))
+print("Общее количестов гласных букв: ", b.count('a') + b.count('e') + b.count('i') + b.count('o') + b.count('u'))
+print("Количесто согласных: ", len(b) - (b.count('a') + b.count('e') + b.count('i') + b.count('o') + b.count('u')))
+if (b.count('a') != 0 or b.count('e') != 0 or  b.count('i') != 0 or b.count('o') != 0 or b.count('u')): 
+    print("False")
 
 
 print("Введите минимальную сумму стартапа, сумму Майкла и Ивана через через пробел.")
