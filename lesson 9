@@ -9,21 +9,23 @@ if a >= 1 and a <= 100000:
 print(len(res))
 
 
-arr = []
-tmp = []
+arr = set()
+tmp = set()
 print ("Введите сколько чисел нужно в 1ом списке.")
 a = int(input())
 print ("Введите числа. Каждое число на отдельной строке.")
 if a <= 100000:
     for i in range (a):
-        arr.append(int(input()));
+        arr.add(int(input()));
 print ("Введите сколько чисел нужно в 2ом списке.")
 b = int(input())
 print ("Введите числа. Каждое число на отдельной строке.")
 if b <= 100000:
     for i in range (b):
-        tmp.append(int(input()));
+        tmp.add(int(input()));
 print("Всего чисел:", len(arr) + len(tmp))
+res = len(arr.intersection(tmp))
+print("Совпадений:", res)
 
 
 arr = input().split()
